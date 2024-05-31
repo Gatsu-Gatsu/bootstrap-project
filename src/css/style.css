@@ -5,7 +5,8 @@ header {
   position: relative; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #1EACC7; }
 
 .sticky {
   background: #212121;
@@ -24,11 +25,11 @@ a {
   padding: 14px 70px;
   margin: 0;
   list-style: none; }
-  .menu .menu_link {
+  .menu_link {
     color: white;
     font-size: 15px;
     font-weight: 300; }
-  .menu .menu_item {
+  .menu_item {
     border-right: 2px dotted black;
     padding-right: 45px; }
 
@@ -38,22 +39,22 @@ a {
   width: 100%;
   height: 87px;
   background: rgba(0, 0, 0, 0.6); }
-  .subheader .subheader_logo {
+  .subheader_logo {
     max-width: 100%;
     display: block;
     margin-top: 20px; }
-  .subheader .subheader_text_1 {
+  .subheader_text_1 {
     color: white;
     font-size: 13px;
     font-weight: 400;
     opacity: 0.5; }
-  .subheader .subheader_text_2 {
+  .subheader_text_2 {
     margin-top: 22px;
     color: white;
     font-size: 12px;
     font-weight: 300;
     text-align: right; }
-  .subheader .subheader_text_3 {
+  .subheader_text_3 {
     display: block;
     color: white;
     font-size: 22px;
@@ -62,7 +63,7 @@ a {
     letter-spacing: 0px;
     text-align: right;
     text-transform: uppercase; }
-  .subheader .subheader_bt {
+  .subheader_btn {
     margin-top: 22px;
     border-radius: 4px;
     width: 172px;
@@ -76,12 +77,15 @@ a {
     font-weight: 400;
     text-align: center;
     text-transform: uppercase; }
+    .subheader_btn:hover {
+      background-image: none;
+      background-color: #1EACC7; }
 
 .promo {
   padding: 150px 0 135px 0;
   min-height: 800px;
   background: url(../img/uber_bg.png) center center/cover no-repeat; }
-  .promo .promo_header {
+  .promo_header {
     margin: 0;
     margin-top: 90px;
     color: white;
@@ -90,7 +94,7 @@ a {
     letter-spacing: 0px;
     text-align: center;
     text-transform: uppercase; }
-  .promo .promo_subheader {
+  .promo_subheader {
     margin-top: 22px;
     margin: 0;
     color: white;
@@ -99,7 +103,7 @@ a {
     letter-spacing: 0px;
     text-align: center;
     text-transform: uppercase; }
-  .promo .promo_descr {
+  .promo_descr {
     margin: 0;
     margin-top: 65px;
     color: white;
@@ -108,7 +112,7 @@ a {
     line-height: 24px;
     letter-spacing: 0px;
     text-align: center; }
-  .promo .promo_btn {
+  .promo_btn {
     display: block;
     margin: 118px auto 0 auto;
     margin-top: 141px;
@@ -125,6 +129,9 @@ a {
     letter-spacing: 0px;
     text-align: center;
     text-transform: uppercase; }
+    .promo_btn:hover {
+      background-image: none;
+      background-color: #1EACC7; }
 
 .advantages .advnt {
   display: -webkit-box;
@@ -206,34 +213,6 @@ a {
     size: 17px;
     height: 21px;
     text-align: center; }
-  .mobile .label {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 113px;
-    height: 24px;
-    background-color: black;
-    color: white;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    text-transform: uppercase; }
-  .mobile .title {
-    margin-top: 33px;
-    color: #222222;
-    font-size: 38px;
-    font-weight: 700;
-    letter-spacing: 0px;
-    text-align: center;
-    text-transform: uppercase; }
   .mobile .row {
     margin-top: 32px; }
   .mobile_item {
@@ -284,44 +263,71 @@ a {
       margin: 0 auto;
       border-radius: 100%;
       cursor: pointer; }
+      .mobile_item_plus::before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 2px;
+        background-color: #1EACC7; }
+      .mobile_item_plus::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+        display: block;
+        width: 2px;
+        height: 14px;
+        background-color: #1EACC7; }
+      .mobile_item_plus:hover::before, .mobile_item_plus:hover::after {
+        background-color: #FF5656;
+        -webkit-transition: 0.6s;
+        transition: 0.6s; }
+
+.label {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 113px;
+  height: 24px;
+  background-color: black;
+  color: white;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-transform: uppercase; }
+  .label_white {
+    background-color: #fff;
+    color: #000; }
+
+.title {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-top: 27px;
+  color: #222222;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-align: center;
+  text-transform: uppercase; }
+  .title_white {
+    color: #fff; }
 
 .car {
   position: relative;
   min-height: 895px;
   background: url("../img/mobile_bg.png") center center/cover no-repeat;
   padding: 54px 0 138px 0; }
-  .car .label {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 113px;
-    height: 24px;
-    background-color: white;
-    color: #070716;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    text-transform: uppercase; }
-  .car .title {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    margin-top: 27px;
-    color: #FFFFFF;
-    font-size: 38px;
-    font-weight: 700;
-    letter-spacing: 0px;
-    text-align: center;
-    text-transform: uppercase; }
   .car .subtitle {
     position: relative;
     color: #FFFFFF;
@@ -354,5 +360,79 @@ a {
     width: 100%;
     background-color: #070716;
     z-index: 0; }
+
+.require {
+  padding: 68px 0 84px 0; }
+  .require_block {
+    margin: 33px 0; }
+    .require_block_nmb {
+      margin-bottom: 0; }
+  .require_title {
+    color: #1EACC7;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left; }
+    .require_title_red {
+      color: #FF5656; }
+  .require_desrc {
+    color: #1EACC7;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left; }
+  .require_list {
+    list-style-type: none;
+    padding-left: 50px;
+    margin-top: 22px; }
+    .require_list li {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 24px;
+      margin-bottom: 10px; }
+      .require_list li::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: translate(-6px, -2px);
+                transform: translate(-6px, -2px);
+        width: 21px;
+        height: 20px;
+        background: url("../icon/mark_blue.png") center center/cover no-repeat; }
+    .require_list_red li::before {
+      background: url("../icon/mark_red.png") center center/cover no-repeat; }
+
+.world {
+  position: relative;
+  min-height: 716px;
+  background: url("../img/world_bg.png") center center/cover no-repeat;
+  background-position-x: 242px 242px;
+  padding: 54px 0 138px 0;
+  z-index: 1; }
+  .world .subtitle {
+    position: relative;
+    color: #FFFFFF;
+    font-weight: 400;
+    size: 17px;
+    height: 21px;
+    text-align: center; }
+  .world .black {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #070716;
+    z-index: 0; }
+  .world .back {
+    padding-top: 626px;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 68px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-transform: uppercase; }
 
 /*# sourceMappingURL=style.css.map */

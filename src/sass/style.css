@@ -10,9 +10,12 @@ a {
   text-decoration: none;
 }
 
-nav {
+.sticky {
   background: rgb(33, 33, 33);
   height: 51px;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
 }
 
 .menu {
@@ -22,41 +25,42 @@ nav {
   margin: 0;
   list-style: none;
 }
-.menu .menu_link {
+.menu_link {
   color: rgb(255, 255, 255);
   font-size: 15px;
   font-weight: 300;
 }
-.menu .menu_item {
+.menu_item {
   border-right: 2px dotted black;
   padding-right: 45px;
 }
 
 .subheader {
   position: absolute;
+  top: 50px;
   width: 100%;
   height: 87px;
   background: rgba(0, 0, 0, 0.6);
 }
-.subheader .subheader_logo {
+.subheader_logo {
   max-width: 100%;
   display: block;
   margin-top: 20px;
 }
-.subheader .subheader_text_1 {
+.subheader_text_1 {
   color: rgb(255, 255, 255);
   font-size: 13px;
   font-weight: 400;
   opacity: 0.5;
 }
-.subheader .subheader_text_2 {
+.subheader_text_2 {
   margin-top: 22px;
   color: rgb(255, 255, 255);
   font-size: 12px;
   font-weight: 300;
   text-align: right;
 }
-.subheader .subheader_text_3 {
+.subheader_text_3 {
   display: block;
   color: rgb(255, 255, 255);
   font-size: 22px;
@@ -66,7 +70,7 @@ nav {
   text-align: right;
   text-transform: uppercase;
 }
-.subheader .subheader_bt {
+.subheader_btn {
   margin-top: 22px;
   border-radius: 4px;
   width: 172px;
@@ -85,7 +89,7 @@ nav {
   min-height: 800px;
   background: url(../img/uber_bg.png) center center/cover no-repeat;
 }
-.promo .promo_header {
+.promo_header {
   margin: 0;
   margin-top: 90px;
   color: rgb(255, 255, 255);
@@ -95,7 +99,7 @@ nav {
   text-align: center;
   text-transform: uppercase;
 }
-.promo .promo_subheader {
+.promo_subheader {
   margin-top: 22px;
   margin: 0;
   color: rgb(255, 255, 255);
@@ -105,7 +109,7 @@ nav {
   text-align: center;
   text-transform: uppercase;
 }
-.promo .promo_descr {
+.promo_descr {
   margin: 0;
   margin-top: 65px;
   color: rgb(255, 255, 255);
@@ -115,7 +119,7 @@ nav {
   letter-spacing: 0px;
   text-align: center;
 }
-.promo .promo_btn {
+.promo_btn {
   display: block;
   margin: 118px auto 0 auto;
   margin-top: 141px;
@@ -136,7 +140,7 @@ nav {
   display: flex;
   justify-content: center;
 }
-.advantages .adv_adv_box {
+.advantages .advnt_box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,14 +149,14 @@ nav {
   height: 24px;
   background-color: black;
 }
-.advantages .adv_adv {
+.advantages_adv {
   color: rgb(255, 255, 255);
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0px;
   text-transform: uppercase;
 }
-.advantages .adv_header {
+.advantages_header {
   color: rgb(34, 34, 34);
   margin-top: 33px;
   font-size: 38px;
@@ -161,33 +165,33 @@ nav {
   text-align: center;
   text-transform: uppercase;
 }
-.advantages .adv_item {
+.advantages_item {
   display: flex;
   align-items: center;
   margin-top: 17px;
 }
-.advantages .adv_text {
+.advantages_text {
   font-size: 15px;
   font-weight: 300;
   line-height: 21px;
   letter-spacing: 0px;
   color: #202020;
 }
-.advantages .adv_text span {
+.advantages_text span {
   font-size: 15px;
   font-weight: 300;
   line-height: 21px;
   letter-spacing: 0px;
   color: #1EACC7;
 }
-.advantages .adv_box {
+.advantages_box {
   display: flex;
   min-width: 116px;
   min-height: 116px;
   margin-right: 25px;
   justify-content: center;
   align-items: center;
-  background: rgb(30, 172, 199);
+  background: #1EACC7;
   border-radius: 50%;
 }
 
@@ -281,6 +285,70 @@ nav {
 }
 
 .car {
-  min-height: 500px;
-  background: rgb(7, 7, 22), url(../img/Uber.png);
+  position: relative;
+  min-height: 895px;
+  background: url("../img/mobile_bg.png") center center/cover no-repeat;
+  padding: 54px 0 138px 0;
+}
+.car .label {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 113px;
+  height: 24px;
+  background-color: white;
+  color: #070716;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+}
+.car .title {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-top: 27px;
+  color: #FFFFFF;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.car .subtitle {
+  position: relative;
+  color: #FFFFFF;
+  font-weight: 400;
+  size: 17px;
+  height: 21px;
+  text-align: center;
+}
+.car_uber {
+  position: relative;
+  display: block;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 54px;
+  width: 759px;
+  height: 480px;
+  z-index: 2;
+}
+.car_text {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  color: #222222;
+  max-width: 327px;
+}
+.car .black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 499px;
+  width: 100%;
+  background-color: #070716;
+  z-index: 0;
 }/*# sourceMappingURL=style.css.map */

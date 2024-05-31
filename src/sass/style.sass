@@ -1,11 +1,17 @@
 $blue-color: #1EACC7
 $red-color: #FF5656
+
+@mixin btn_hover
+	&:hover
+		background-image: none
+		background-color: $blue-color
 *
 	font-family: "Roboto", sans-serif 
 header 
 	position: relative
 a 
 	text-decoration: none 
+	color: $blue-color
 .sticky
 	background: rgb(33, 33, 33) 
 	height: 51px 
@@ -19,11 +25,11 @@ a
 	padding: 14px 70px 
 	margin: 0 
 	list-style: none 
-	.menu_link 
+	&_link 
 		color: rgb(255, 255, 255) 
 		font-size: 15px 
 		font-weight: 300 
-	.menu_item 
+	&_item 
 		border-right: 2px dotted black 
 		padding-right: 45px 
 .subheader 
@@ -32,22 +38,22 @@ a
 	width: 100% 
 	height: 87px 
 	background: rgba(0, 0, 0, .6) 
-	.subheader_logo 
+	&_logo 
 		max-width: 100% 
 		display: block 
 		margin-top: 20px 
-	.subheader_text_1 
+	&_text_1 
 		color: rgb(255, 255, 255) 
 		font-size: 13px 
 		font-weight: 400 
 		opacity: 0.5 
-	.subheader_text_2 
+	&_text_2 
 		margin-top: 22px 
 		color: rgb(255, 255, 255) 
 		font-size: 12px 
 		font-weight: 300 
 		text-align: right 
-	.subheader_text_3 
+	&_text_3 
 		display: block 
 		color: rgb(255, 255, 255) 
 		font-size: 22px 
@@ -56,7 +62,7 @@ a
 		letter-spacing: 0px 
 		text-align: right 
 		text-transform: uppercase 
-	.subheader_bt 
+	&_btn 
 		margin-top: 22px 
 		border-radius: 4px 
 		width: 172px 
@@ -68,11 +74,12 @@ a
 		font-weight: 400 
 		text-align: center 
 		text-transform: uppercase 
+		@include btn_hover
 .promo 
 	padding: 150px 0 135px 0 
 	min-height: 800px 
 	background: url(../img/uber_bg.png) center center/cover no-repeat 
-	.promo_header 
+	&_header 
 		margin: 0 
 		margin-top: 90px 
 		color: rgb(255, 255, 255) 
@@ -81,7 +88,7 @@ a
 		letter-spacing: 0px 
 		text-align: center 
 		text-transform: uppercase 
-	.promo_subheader 
+	&_subheader 
 		margin-top: 22px 
 		margin: 0 
 		color: rgb(255, 255, 255) 
@@ -90,7 +97,7 @@ a
 		letter-spacing: 0px 
 		text-align: center 
 		text-transform: uppercase 
-	.promo_descr 
+	&_descr 
 		margin: 0 
 		margin-top: 65px 
 		color: rgb(255, 255, 255) 
@@ -99,7 +106,7 @@ a
 		line-height: 24px 
 		letter-spacing: 0px 
 		text-align: center 
-	.promo_btn 
+	&_btn 
 		display: block 
 		margin: 118px auto 0 auto 
 		margin-top: 141px 
@@ -114,6 +121,7 @@ a
 		letter-spacing: 0px 
 		text-align: center 
 		text-transform: uppercase 
+		@include btn_hover
 .advantages 
 	.advnt 
 		display: flex 
@@ -174,28 +182,6 @@ a
 		size: 17px
 		height: 21px
 		text-align: center
-	.label
-		display: flex 
-		justify-content: center 
-		align-items: center 
-		margin: 0 auto
-		margin-top: 20px
-		width: 113px 
-		height: 24px 
-		background-color: black
-		color: rgb(255, 255, 255) 
-		font-size: 11px 
-		font-weight: 400 
-		letter-spacing: 0px 
-		text-transform: uppercase
-	.title
-		margin-top: 33px
-		color: rgb(34, 34, 34) 
-		font-size: 38px 
-		font-weight: 700 
-		letter-spacing: 0px 
-		text-align: center 
-		text-transform: uppercase
 	.row
 		margin-top: 32px
 	&_item
@@ -239,38 +225,63 @@ a
 			margin: 0 auto
 			border-radius: 100%
 			cursor: pointer
+			&::before
+				content: ""
+				display: block
+				width: 14px
+				height: 2px
+				background-color: $blue-color
+			&::after
+				content: ""
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				display: block
+				width: 2px
+				height: 14px
+				background-color: $blue-color
+			&:hover
+				&::before, &::after
+					background-color: $red-color
+					transition: 0.6s					
+
+.label
+	position: relative
+	display: flex 
+	justify-content: center 
+	align-items: center 
+	margin: 0 auto
+	margin-top: 20px
+	width: 113px 
+	height: 24px 
+	background-color: black
+	color: rgb(255, 255, 255) 
+	font-size: 11px 
+	font-weight: 400 
+	letter-spacing: 0px 
+	text-transform: uppercase
+	&_white 
+		background-color: #fff
+		color: #000
+.title
+	position: relative
+	display: block
+	margin: 0 auto
+	margin-top: 27px
+	color: rgb(34, 34, 34)
+	font-size: 38px 
+	font-weight: 700 
+	letter-spacing: 0px 
+	text-align: center 
+	text-transform: uppercase
+	&_white 
+		color: #fff
 
 .car
 	position: relative
 	min-height: 895px
 	background: url('../img/mobile_bg.png') center (center / cover) no-repeat
-	padding: 54px 0 138px 0
-	.label
-		position: relative
-		display: flex 
-		justify-content: center 
-		align-items: center 
-		margin: 0 auto
-		margin-top: 20px
-		width: 113px 
-		height: 24px 
-		background-color: white
-		color: #070716
-		font-size: 11px 
-		font-weight: 400 
-		letter-spacing: 0px 
-		text-transform: uppercase
-	.title
-		position: relative
-		display: block
-		margin: 0 auto
-		margin-top: 27px
-		color: #FFFFFF
-		font-size: 38px 
-		font-weight: 700 
-		letter-spacing: 0px 
-		text-align: center 
-		text-transform: uppercase	
+	padding: 54px 0 138px 0	
 	.subtitle
 		position: relative
 		color: #FFFFFF
@@ -301,3 +312,78 @@ a
 		width: 100%
 		background-color: #070716
 		z-index: 0	
+
+.require
+	padding: 68px 0 84px 0
+	&_block
+		margin: 33px 0
+		&_nmb
+			margin-bottom: 0
+	&_title
+		color: $blue-color
+		font-size: 22px
+		font-weight: 400
+		line-height: 24px
+		letter-spacing: 0px
+		text-align: left
+		&_red
+			color: $red-color
+	&_desrc
+		color: $blue-color
+		font-size: 17px
+		font-weight: 300
+		line-height: 24px
+		letter-spacing: 0px
+		text-align: left
+	&_list
+		list-style-type: none
+		padding-left: 50px
+		margin-top: 22px
+		li	
+			font-size: 17px
+			font-weight: 300
+			line-height: 24px
+			margin-bottom: 10px
+			&::before
+				content: ""
+				display: inline-block
+				vertical-align: middle
+				transform: translate(-6px, -2px)
+				width: 21px
+				height: 20px
+				background: url("../icon/mark_blue.png") center  center/cover no-repeat
+		&_red
+			li
+				&::before
+					background: url("../icon/mark_red.png") center  center/cover no-repeat
+
+.world
+	position: relative
+	min-height: 716px
+	background: url('../img/world_bg.png') center (center / cover) no-repeat
+	background-position-x: 242px 242px
+	padding: 54px 0 138px 0	
+	z-index: 1
+	.subtitle
+		position: relative
+		color: #FFFFFF
+		font-weight: 400
+		size: 17px
+		height: 21px
+		text-align: center
+	.black 
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+		background-color: #070716
+		z-index: 0	
+	.back
+		padding-top: 626px
+		color: black
+		font-size: 15px
+		font-weight: 400
+		line-height: 68px
+		letter-spacing: 0px
+		text-align: center
+		text-transform: uppercase
