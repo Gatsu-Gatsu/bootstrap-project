@@ -359,11 +359,9 @@ a
 
 .world
 	position: relative
-	min-height: 716px
+	min-height: 717px
+	padding: 49px 0
 	background: url('../img/world_bg.png') center (center / cover) no-repeat
-	background-position-x: 242px 242px
-	padding: 54px 0 138px 0	
-	z-index: 1
 	.subtitle
 		position: relative
 		color: #FFFFFF
@@ -371,22 +369,20 @@ a
 		size: 17px
 		height: 21px
 		text-align: center
-	.black 
-		top: 0
-		left: 0
-		height: 100%
-		width: 100%
-		background-color: #070716
-		z-index: 0	
 	.back
-		padding-top: 626px
-		color: black
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		bottom: 49px
+		text-align: center
 		font-size: 15px
 		font-weight: 400
 		line-height: 68px
-		letter-spacing: 0px
-		text-align: center
 		text-transform: uppercase
+		color: #1fbad6
+		&:hover 
+			text-decoration: none
+			color: #fff
 
 footer 
 	padding: 14px 23px 39px 23px
@@ -406,14 +402,14 @@ footer
 		align-items: flex-start
 		padding-top: 32px
 	&_wrapper > div 
-		
+		width: 33%
 		&:nth-child(3)
 			display: flex 
 			justify-content: flex-end
 	&_social
 		width: 160px
 		display: flex
-		justify-content: space-between
+		justify-content: flex-start
 		&_item 
 			display: flex 
 			justify-content: center
